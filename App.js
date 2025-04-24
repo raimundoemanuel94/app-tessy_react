@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { View, Text } from 'react-native';
+
+import LoginScreen from './screens/LoginScreen';
+import ClienteHomeScreen from './screens/HomeScreen';
+import AgendarScreen from './screens/AgendarScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [logado, setLogado] = useState(false); // <-- Começa como false pra forçar Login
+
+  useEffect(() => {
+    verificarLogin();
+  }, []);
+
+  const verificarLogin = async () => {
+    const status = await AsyncStorage.getItem('usuarioLogado');
+    setLogado(status === 'true');
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {logado ? (
+          <>
+            <Stack.Screen name="ClienteHome" component={ClienteHomeScreen} />
+            <Stack.Screen name="Agendar" component={AgendarScreen} />
+          </>
+        ) : (
+          <Stack.Screen name="Login" component={LoginScreen} />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
