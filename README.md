@@ -1,4 +1,4 @@
-# Tessy Nails 💅
+# Tessy   💅
 
 Aplicativo de agendamento para salões de beleza, desenvolvido em **React Native** com foco em simplicidade e eficiência.
 
@@ -23,3 +23,6 @@ Aplicativo de agendamento para salões de beleza, desenvolvido em **React Native
    git clone https://github.com/raimundoemanuel94/app-tessy_react.git
    
 Em desenvolvimento! Novas funcionalidades serão adicionadas em breve.
+## 👨‍💻 Autor
+
+- **Raimundo Emanuel** - [GitHub](https://github.com/raimundoemanuel94)
