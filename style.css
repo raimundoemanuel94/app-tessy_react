@@ -1,0 +1,137 @@
+@keyframes slideUpOut {
+  to {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+.modal.modal-slide-out .modal-dialog {
+  animation: slideUpOut 0.45s ease-in;
+}
+
+:root {
+  --primary: #4ea8de;   /* azul suave */
+  --secondary: #38b6a1; /* verde menta */
+  --background: #f1f6f9;
+  --input-bg: #fff;
+  --input-border: #bfe0fc;
+  --text-main: #23263b;
+  --text-light: #7a7a7a;
+}
+body {
+  background: var(--background);
+  font-family: Arial, sans-serif;
+  color: var(--text-main);
+}
+.container,
+.card {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  width: 100%;
+}
+.card {
+  background: var(--input-bg);
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(78, 168, 222, 0.07);
+  padding: 32px 30px 32px 30px;
+  border: none;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: var(--primary);
+}
+  input, select, button {
+  font-size: 1.03em;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  }
+input, select {
+  width: 100%;
+  }
+input.form-control, select.form-select,
+input, select {
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  color: var(--text-main);
+}
+input.form-control:focus, select.form-select:focus,
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 .2rem #4ea8de22;
+  outline: none;
+}
+button, .btn-primary {
+  width: 100%;
+  background: var(--primary) !important;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  transition: background 0.25s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-primary:hover, .btn-primary:focus,
+button:hover {
+  background: var(--secondary) !important;
+}
+.social-links {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  color: var(--secondary);
+  background: #e0f7fa;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.social-links a:hover {
+  color: #fff;
+  background: var(--primary);
+}
+footer {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--text-light);
+}
+@media (max-width: 900px) {
+  .container,
+  .card {
+    padding: 26px 8vw;
+  }
+}
+@media (max-width: 570px) {
+  .container,
+  .card {
+    max-width: 97vw;
+    padding: 15px 5vw;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+  }
+  .card {
+    padding: 15px 5vw;
+  }
+  h1 {
+    font-size: 1.15em;
+  }
+  input, select, button {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .social-links a {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
